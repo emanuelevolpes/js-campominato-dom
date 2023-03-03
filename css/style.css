@@ -1,0 +1,119 @@
+/*
+---------
+Reset
+---------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+---------
+common
+---------
+*/
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+/*
+---------
+main
+---------
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5625rem .9375rem;
+}
+
+header > div > img {
+    width: 3.125rem;
+    vertical-align: bottom;
+}
+
+header > div > h1 {
+    display: inline;
+    margin-left: .9375rem;
+    vertical-align: middle;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+header button,
+header select{
+    padding: 0 .3125rem;
+    height: 1.5625rem;
+    border: .0625rem solid gray;
+    background-color: #e9e9ec;
+    border-radius: .3125rem;
+    cursor: pointer;
+}
+
+header button {
+    width: 6.25rem;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #7fffd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.125rem 0;
+}
+
+.clicked-cell{
+    background-color: blue;
+}
+
+#container{
+    height: 32.875rem;
+    width: 32.875rem;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell {
+    outline: .0625rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+.cell-medium {
+    outline: .0625rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.cell-hard {
+    outline: .0625rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
