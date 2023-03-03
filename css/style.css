@@ -84,6 +84,10 @@ main {
     background-color: blue;
 }
 
+.bomb-cell {
+    background-color: red;
+}
+
 #container{
     height: 32.875rem;
     width: 32.875rem;

@@ -68,15 +68,13 @@ function generateRandomUniqueNumber (range, outputCount) {
     let result = [];
 
     for (let i = 1; i <= outputCount; i++) {
-        const random = Math.floor(Math.random() + (range - i));
+        const random = Math.floor(Math.random() * (range - i));
         result.push(arr[random]);
         arr[random] = arr[range - i];
     };
 
     return result;
 };
-
-
 
 /*
 ---------
@@ -89,16 +87,23 @@ const button = document.querySelector('.start-button');
 button.addEventListener('click', function () {
     const container = document.getElementById('container');
     createStructure(container);
+    console.log(generateRandomUniqueNumber(49, 16));
 
     const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
     let arrayClickedCell = [];
 
     for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener('click', function () {
-            cell[i].classList.add('clicked-cell');
-            console.log(numberValue(cell, i + 1));
             arrayClickedCell.push(numberValue(cell, i + 1));
+            console.log(arrayClickedCell);
+            if (arrayClickedCell === generateRandomUniqueNumber(49, 16)) {
+                // console.log(arrayClickedCell);
+                cell[i].classList.add('bomb-cell');
+            } else {
+                cell[i].classList.add('clicked-cell');
+            };
         });
     };
     console.log(arrayClickedCell);
+    generateRandomUniqueNumber(49, 16);
 });
