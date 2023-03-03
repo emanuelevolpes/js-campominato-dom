@@ -20,7 +20,7 @@ function appentToContainer(container, cell) {
     return container.append(cell);
 };
 
-function createEasyStructure(container) {
+function createStructure(container) {
     container.innerHTML = '';
     container.classList.replace('d-none', 'd-flex');
 
@@ -55,6 +55,28 @@ function createEasyStructure(container) {
     };
     return;
 };
+ 
+//generatore di numeri casuali
+function generateRandomUniqueNumber (range, outputCount) {
+    
+    let arr = [];
+    
+    for (let i = 1; i <= range; i++) {
+        arr.push(i);
+    };
+
+    let result = [];
+
+    for (let i = 1; i <= outputCount; i++) {
+        const random = Math.floor(Math.random() + (range - i));
+        result.push(arr[random]);
+        arr[random] = arr[range - i];
+    };
+
+    return result;
+};
+
+
 
 /*
 ---------
@@ -66,7 +88,7 @@ const button = document.querySelector('.start-button');
 
 button.addEventListener('click', function () {
     const container = document.getElementById('container');
-    createEasyStructure(container);
+    createStructure(container);
 
     const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
 
