@@ -56,7 +56,7 @@ function createStructure(container) {
     return;
 };
  
-//generatore di numeri casuali
+//generatore di numeri
 function generateRandomUniqueNumber (range, outputCount) {
     
     let arr = [];
@@ -91,14 +91,14 @@ button.addEventListener('click', function () {
     createStructure(container);
 
     const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
+    let arrayClickedCell = [];
 
     for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener('click', function () {
             cell[i].classList.add('clicked-cell');
             console.log(numberValue(cell, i + 1));
-            // let arrayClickedCell = [];
-            // arrayClickedCell.push(numberValue(cell, i + 1));
-            // console.log(arrayClickedCell);
+            arrayClickedCell.push(numberValue(cell, i + 1));
         });
     };
+    console.log(arrayClickedCell);
 });
